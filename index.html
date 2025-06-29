@@ -3,22 +3,188 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> V公合集</title>
-    <link rel="stylesheet" href="style.css">
+    <title>V公合集</title>
+    <style>
+        /* 重置浏览器默认样式 */
+        body, h1, p, ul, li, nav, figure, footer, div {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ff7e5f, #feb47b, #7bed9f, #70a1ff, #5352ed);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.85);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            flex: 1;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #ff6b6b;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            color: #ff6b6b;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .content {
+            margin-bottom: 30px;
+        }
+
+        .content p {
+            margin-bottom: 15px;
+            font-size: 1.1em;
+            color: #444;
+            text-align: justify;
+        }
+
+        .content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .content br {
+            margin-bottom: 10px;
+        }
+
+        nav {
+            background-color: #5352ed;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 8px 15px;
+            border-radius: 25px;
+            background-color: #ff6b6b;
+            transition: all 0.3s ease;
+        }
+
+        nav li a:hover {
+            background-color: #ff8787;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .illustration {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+        }
+
+        .illustration figure {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            background-color: #f8f9fa;
+            padding: 10px;
+        }
+
+        .illustration figure img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 5px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: auto;
+            padding-top: 20px;
+            border-top: 2px dashed #70a1ff;
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>v公合集（试验版）</h1>
-    <p>这边浑水，感恩刀师傅、稀饭老师等v公产出如此美味的饭（抹泪）</p>
-    <p>于是哇达西整出了这个v公网站</p>
-    <p>由于本人是第一次使用并建立网站，如有错误劳反馈喵</p>
-    <p>ps：大人们，如果打不开链接请在浏览器长按打开新网址🤲，而且经过试验这边建议使用夸克浏览器</p>
-    <br>
-    <nav>
-        <ul>
-            <li><a href="docs/vn-1.html">vn-1</a></li>
-            <li><a href="docs/vn-2.html">vn-2</a></li>
-            <li><a href="docs/vn-3.html">vn-3</a></li>
-        </ul>
-    </nav>
+    <div class="container">
+        <div class="header">
+            <h1>v公合集（试验版）</h1>
+        </div>
+        
+        <div class="content">
+            <p>这边浑水，感恩刀师傅、稀饭老师等v公产出如此美味的饭（抹泪）</p>
+            <p>于是哇达西整出了这个v公网站</p>
+            <p>由于本人是第一次使用并建立网站，如有错误劳反馈喵</p>
+            <p>ps：大人们，如果打不开链接请在浏览器长按打开新网址，而且经过试验这边建议使用夸克浏览器</p>
+            <br>
+            
+            <nav>
+                <ul>
+                    <li><a href="docs/vn-1.html">vn-1</a></li>
+                    <li><a href="docs/vn-2.html">vn-2</a></li>
+                    <li><a href="docs/vn-3.html">vn-3</a></li>
+                </ul>
+            </nav>
+        </div>
+        
+        <div class="illustration">
+            <figure>
+                <img src="images/nero.gif" alt="一只尼禄狗狗正在路过……" onerror="this.onerror=null; this.src='https://picsum.photos/seed/vlog/400/300.jpg';">
+            </figure>
+        </div>
+        
+        <footer>
+           
+    </div>
 </body>
 </html>
