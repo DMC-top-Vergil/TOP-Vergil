@@ -5,186 +5,205 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>V公合集</title>
     <style>
-        /* 重置浏览器默认样式 */
-        body, h1, p, ul, li, nav, figure, footer, div {
+        /* 整体页面样式 */
+        body {
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
             font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #ff7e5f, #feb47b, #7bed9f, #70a1ff, #5352ed);
-            background-size: 400% 400%;
-            animation: gradientBG 15s ease infinite;
+            background: linear-gradient(to bottom, #e6f7ff, #0066cc);
             color: #333;
-            line-height: 1.6;
-            padding: 20px;
             min-height: 100vh;
-            display: flex;
-            flex-direction: column;
         }
 
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
+        /* 容器样式 */
         .container {
-            max-width: 800px;
+            max-width: 1200px;
             margin: 0 auto;
-            background-color: rgba(255, 255, 255, 0.85);
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            flex: 1;
+            padding: 20px;
         }
 
-        .header {
+        /* 标题样式 */
+        .title-container {
             text-align: center;
             margin-bottom: 30px;
-            padding-bottom: 15px;
-            border-bottom: 3px solid #ff6b6b;
         }
 
-        .header h1 {
-            font-size: 2.5em;
-            color: #ff6b6b;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .content {
-            margin-bottom: 30px;
-        }
-
-        .content p {
-            margin-bottom: 15px;
-            font-size: 1.1em;
-            color: #444;
-            text-align: justify;
-        }
-
-        .content p:last-child {
-            margin-bottom: 0;
-        }
-
-        .content br {
+        h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+            background: linear-gradient(to right, #ff8a00, #e52e71, #2193b0, #6dd5ed);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
             margin-bottom: 10px;
         }
 
-        nav {
-            background-color: #5352ed;
-            padding: 15px;
+        .subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            margin-top: -15px;
+        }
+
+        /* 插图容器样式 */
+        .illustration-container {
+            text-align: center;
+            margin: 20px auto;
+            max-width: 80%;
+        }
+
+        .illustration-container img {
+            max-width: 100%;
             border-radius: 10px;
-            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
 
-        nav ul {
+        /* 简介边框样式 */
+        .intro-box {
+            background: linear-gradient(to bottom, #f5f5f5, #e0e0e0);
+            border: 2px solid #aaa;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px auto;
+            max-width: 80%;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .intro-box p {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* 目录样式 */
+        .toc-container {
+            margin: 30px auto;
+            max-width: 80%;
+        }
+
+        .toc {
+            border: 3px solid gold;
+            border-radius: 8px;
+            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.7);
+        }
+
+        .toc h2 {
+            color: #333;
+            border-bottom: 2px solid gold;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        .toc ul {
             list-style-type: none;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
+            padding-left: 0;
         }
 
-        nav li a {
-            color: white;
+        .toc li {
+            margin-bottom: 10px;
+        }
+
+        .toc a {
+            color: #0066cc;
             text-decoration: none;
             font-weight: bold;
-            padding: 8px 15px;
-            border-radius: 25px;
-            background-color: #ff6b6b;
-            transition: all 0.3s ease;
+            transition: color 0.3s;
         }
 
-        nav li a:hover {
-            background-color: #ff8787;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        .toc a:hover {
+            color: #ff8a00;
         }
 
-        .illustration {
-            display: flex;
-            justify-content: center;
-            margin: 30px 0;
+        /* 文章摘要样式 */
+        .article-summary {
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 80%;
         }
 
-        .illustration figure {
-            width: 100%;
-            max-width: 400px;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-            background-color: #f8f9fa;
-            padding: 10px;
+        .article-summary h3 {
+            color: #333;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
         }
 
-        .illustration figure img {
-            width: 100%;
-            height: auto;
-            display: block;
-            border-radius: 5px;
+        .article-summary p {
+            line-height: 1.6;
+            margin-bottom: 10px;
         }
 
+        /* 页脚样式 */
         footer {
             text-align: center;
-            margin-top: auto;
-            padding-top: 20px;
-            border-top: 2px dashed #70a1ff;
+            margin-top: 40px;
+            padding: 20px;
             color: #666;
-            font-size: 0.9em;
-        }
-
-        footer p {
-            margin: 5px 0;
-        }
-
-        @media (max-width: 600px) {
-            .container {
-                padding: 15px;
-            }
-            
-            .header h1 {
-                font-size: 2em;
-            }
-            
-            nav ul {
-                flex-direction: column;
-                gap: 10px;
-            }
+            font-style: italic;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <h1>v公合集（试验版）</h1>
+        <div class="title-container">
+            <h1>V公合集</h1>
+            <div class="subtitle">(试验版)</div>
         </div>
-        
-        <div class="content">
-            <p>这边浑水，感恩刀师傅、稀饭老师等v公产出如此美味的饭（抹泪）</p>
-            <p>于是哇达西整出了这个v公网站</p>
-            <p>由于本人是第一次使用并建立网站，如有错误劳反馈喵</p>
-            <p>ps：大人们，如果打不开链接请在浏览器长按打开新网址，而且经过试验这边建议使用夸克浏览器</p>
-            <br>
-            
-            <nav>
+
+        <!-- 插图区域 -->
+        <div class="illustration-container">
+            <img src="images/nero.gif" alt="V公合集插图" onerror="this.onerror=null; this.src='https://picsum.photos/seed/vcollec/800/400.jpg'">
+        </div>
+
+          <footer>
+            <p>尼禄正在努力部署网页中</p>
+        </footer>
+
+        <!-- 简介边框 -->
+        <div class="intro-box">
+           <p>这边浑水，感恩刀师傅、稀饭老师等v公产出如此美味的饭（抹泪）</p>
+           <p>于是哇达西整出了这个v公网站</p>
+           <p>由于本人是第一次使用并建立网站，如有错误劳反馈喵</p>
+           <p>ps：大人们，如果打不开链接请在浏览器长按打开新网址🤲，而且经过试验这边建议使用夸克浏览器</p>
+     </div>
+
+        <!-- 目录部分 -->
+        <div class="toc-container">
+            <div class="toc">
+                <h2>目录</h2>
                 <ul>
-                    <li><a href="docs/vn-1.html">vn-1</a></li>
-                    <li><a href="docs/vn-2.html">vn-2</a></li>
-                    <li><a href="docs/vn-3.html">vn-3</a></li>
-                </ul>
-            </nav>
+                    <li><a href="docs/vn-1.html">VN-1</a></li>
+                    <li><a href="docs/vn-2.html">VN-2</a></li>
+                    <li><a href="docs/vn-3.html">VN-3</a></li>
+
+            </div>
         </div>
-        
-        <div class="illustration">
-            <figure>
-                <img src="images/nero.gif" alt="一只尼禄狗狗正在路过……" onerror="this.onerror=null; this.src='https://picsum.photos/seed/vlog/400/300.jpg';">
-            </figure>
+
+        <!-- 文章摘要 -->
+        <div class="article-summary">
+            <h3 id="article1">VN-1</h3>
+            <p><刀师傅做饭超级好吃！！！></p>
+            <p><都去给我看刀师傅的画！！！></p>
+            <p><卧槽啊女神！！！女神！！！></p>
         </div>
-        
-        <footer>
-           
+
+        <div class="article-summary">
+            <h3 id="article2">VN-2</h3>
+            <p><这里本该是一段文字></p>
+            <p><这里本该是一段文字></p>
+            <p><这里本该是一段文字></p>
+        </div>
+
+        <div class="article-summary">
+            <h3 id="article3">VN-3</h3>
+            <p><这里本该是一段文字></p>
+            <p><这里本该是一段文字></p>
+            <p><这里本该是一段文字></p>
+        </div>
+
+    
     </div>
 </body>
 </html>
