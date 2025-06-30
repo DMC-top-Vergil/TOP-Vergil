@@ -113,40 +113,114 @@
             color: #ff8a00;
         }
 
-        /* 文章摘要样式 - 瀑布流布局 */
+         /* 摘要网格布局 */
         .article-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 20px;
-            margin: 20px auto;
-            max-width: 1200px;
+            margin-top: 30px;
         }
 
+        /* 摘要卡片样式 */
         .article-summary {
-            background-color: rgba(255, 255, 255, 0.7);
+            background-color: rgba(255, 255, 255, 0.9);
             border-radius: 8px;
             padding: 20px;
-            margin: 10px auto;
-            max-width: 100%;
-            transition: transform 0.3s ease;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin: 10px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .article-summary:hover {
             transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
         }
 
-        .article-summary h3 {
-            color: blue;
+        /* 摘要标题样式 - 蓝色斜体 */
+        .article-summary h3 a {
+            color: #0066cc;
             font-style: italic;
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: inline-block;
             border-bottom: 1px solid #ddd;
             padding-bottom: 10px;
             margin-bottom: 15px;
         }
 
+        .article-summary h3 a:hover {
+            color: #004499;
+            border-bottom-color: #999;
+        }
+
+        /* 摘要段落样式 */
         .article-summary p {
             line-height: 1.6;
             margin-bottom: 10px;
+            color: #555;
+        }
+
+        /* 瀑布流交错布局 */
+        .article-summary:nth-child(1) {
+            grid-row: span 1;
+        }
+
+        .article-summary:nth-child(2) {
+            grid-row: span 2;
+        }
+
+        .article-summary:nth-child(3) {
+            grid-row: span 1;
+        }
+
+        .article-summary:nth-child(4) {
+            grid-row: span 2;
+        }
+
+        .article-summary:nth-child(5) {
+            grid-row: span 1;
+        }
+
+        .article-summary:nth-child(6) {
+            grid-row: span 2;
+        }
+
+        .article-summary:nth-child(7) {
+            grid-row: span 1;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .article-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .article-summary {
+                grid-row: span 1;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .article-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .article-summary {
+                grid-row: span 1;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .article-summary h3 a {
+                font-size: 1.3rem;
+            }
         }
 
         /* 页脚样式 */
@@ -189,6 +263,16 @@
         <div class="illustration-container">
             <img src="images/nero-loading.gif" alt="V公合集插图" onerror="this.onerror=null; this.src='https://picsum.photos/seed/vcollec/800/400.jpg'">
         </div>
+
+         <footer>
+            <p>尼禄正在努力部署网页中</p>
+            <p>        。</p>
+            <p>        。</p>
+            <p>        。</p>
+            <p>        。</p>
+            <p>        。</p>
+            <p>        。</p>
+        </footer>
 
         <!-- 简介边框 -->
         <div class="intro-box">
@@ -266,15 +350,7 @@
             </div>
         </div>
 
-        <footer>
-            <p>尼禄正在努力部署网页中</p>
-            <p>.</p>
-            <p>.</p>
-            <p>.</p>
-            <p>.</p>
-            <p>.</p>
-            <p>.</p>
-        </footer>
+       
     </div>
 </body>
 </html>
