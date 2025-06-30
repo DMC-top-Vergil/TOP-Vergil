@@ -220,10 +220,15 @@
                 grid-template-columns: repeat(2, 1fr);
             }
 
-            .article-summary:nth-child(odd),
-            .article-summary:nth-child(even) {
+            /* 手机端双排瀑布流 - VN-1高度为150px，其他为225px */
+            #article1 {
                 grid-row: span 1;
                 min-height: 150px;
+            }
+            
+            .article-summary:not(#article1) {
+                grid-row: span 2;
+                min-height: 225px;
             }
             
             h1 {
@@ -258,13 +263,13 @@
         </div>
 
         <footer>
-            <p>尼禄正在努力部署网页中</p>
-            <p>        。</p>
-            <p>        。</p>
-            <p>        。</p>
-            <p>        。</p>
-            <p>        。</p>
-            <p>        。</p>
+        <p>尼禄正在努力部署网页中</p>
+        <p>        。</p>
+        <p>        。</p>
+        <p>        。</p>
+        <p>        。</p>
+        <p>        。</p>
+        <p>        。</p>
         </footer>
 
         <!-- 简介边框 -->
@@ -303,128 +308,128 @@
 
         <!-- 文章摘要 - 瀑布流布局 -->
         <div class="article-grid">
-            <div class="article-summary">
-                <h3><a href="docs/vn-1.html" id="article1">VN-1</a></h3>
+            <div class="article-summary" id="article1">
+                <h3><a href="docs/vn-1.html">VN-1</a></h3>
                 <p>清清可爱</p>
                 <p>稀饭可爱</p>
                 <p>刀师傅可爱</p>
             </div>
 
-            <div class="article-summary">
-                <h3><a href="docs/vn-2.html" id="article2">VN-2</a></h3>
+            <div class="article-summary" id="article2">
+                <h3><a href="docs/vn-2.html">VN-2</a></h3>
                 <p>这里本该是一段文字</p>
                 <p>这里本该是一段文字</p>
                 <p>这里本该是一段文字</p>
                 <p>这里本该是一段文字</p>
             </div>
 
-            <div class="article-summary">
-                <h3><a href="docs/vn-3.html" id="article3">VN-3</a></h3>
+            <div class="article-summary" id="article3">
+                <h3><a href="docs/vn-3.html">VN-3</a></h3>
                 <p>这里本该是一段文字</p>
                 <p>这里本该是一段文字</p>
                 <p>这里本该是一段文字</p>
             </div>
 
-            <div class="article-summary">
-                <h3><a href="docs/vn-4.html" id="article4">VN-4</a></h3>
-                <p>这里本该是一段文字</p>
-                <p>这里本该是一段文字</p>
-                <p>这里本该是一段文字</p>
-                <p>这里本该是一段文字</p>
-            </div>
-
-            <div class="article-summary">
-                <h3><a href="docs/vn-5.html" id="article5">VN-5</a></h3>
-                <p>这里本该是一段文字</p>
-                <p>这里本该是一段文字</p>
-                <p>这里本该是一段文字</p>
-            </div>
-
-            <div class="article-summary">
-                <h3><a href="docs/vn-6.html" id="article6">VN-6</a></h3>
+            <div class="article-summary" id="article4">
+                <h3><a href="docs/vn-4.html">VN-4</a></h3>
                 <p>这里本该是一段文字</p>
                 <p>这里本该是一段文字</p>
                 <p>这里本该是一段文字</p>
                 <p>这里本该是一段文字</p>
             </div>
 
-            <div class="article-summary">
-                <h3><a href="docs/vn-7.html" id="article7">VN-7</a></h3>
+            <div class="article-summary" id="article5">
+                <h3><a href="docs/vn-5.html">VN-5</a></h3>
                 <p>这里本该是一段文字</p>
                 <p>这里本该是一段文字</p>
                 <p>这里本该是一段文字</p>
             </div>
 
-            <div class="article-summary">
-                <h3><a href="docs/vn-8.html" id="article8">VN-8</a></h3>
-                <p>这里本该是一段文字</p>
-                <p>这里本该是一段文字</p>
-                <p>这里本该是一段文字</p>
-                <p>这里本该是一段文字</p>
-            </div>
-
-            <div class="article-summary">
-                <h3><a href="docs/vn-9.html" id="article9">VN-9</a></h3>
-                <p>这里本该是一段文字</p>
-                <p>这里本该是一段文字</p>
-                <p>这里本该是一段文字</p>
-            </div>
-
-            <div class="article-summary">
-                <h3><a href="docs/vn-10.html" id="article10">VN-10</a></h3>
+            <div class="article-summary" id="article6">
+                <h3><a href="docs/vn-6.html">VN-6</a></h3>
                 <p>这里本该是一段文字</p>
                 <p>这里本该是一段文字</p>
                 <p>这里本该是一段文字</p>
                 <p>这里本该是一段文字</p>
             </div>
 
-            <div class="article-summary">
-                <h3><a href="docs/vn-11.html" id="article11">VN-11</a></h3>
+            <div class="article-summary" id="article7">
+                <h3><a href="docs/vn-7.html">VN-7</a></h3>
                 <p>这里本该是一段文字</p>
                 <p>这里本该是一段文字</p>
                 <p>这里本该是一段文字</p>
             </div>
 
-            <div class="article-summary">
-                <h3><a href="docs/vn-12.html" id="article12">VN-12</a></h3>
-                <p>这里本该是一段文字</p>
-                <p>这里本该是一段文字</p>
-                <p>这里本该是一段文字</p>
-                <p>这里本该是一段文字</p>
-            </div>
-
-            <div class="article-summary">
-                <h3><a href="docs/vn-13.html" id="article13">VN-13</a></h3>
-                <p>这里本该是一段文字</p>
-                <p>这里本该是一段文字</p>
-                <p>这里本该是一段文字</p>
-            </div>
-
-            <div class="article-summary">
-                <h3><a href="docs/vn-14.html" id="article14">VN-14</a></h3>
+            <div class="article-summary" id="article8">
+                <h3><a href="docs/vn-8.html">VN-8</a></h3>
                 <p>这里本该是一段文字</p>
                 <p>这里本该是一段文字</p>
                 <p>这里本该是一段文字</p>
                 <p>这里本该是一段文字</p>
             </div>
 
-            <div class="article-summary">
-                <h3><a href="docs/vn-15.html" id="article15">VN-15</a></h3>
+            <div class="article-summary" id="article9">
+                <h3><a href="docs/vn-9.html">VN-9</a></h3>
                 <p>这里本该是一段文字</p>
                 <p>这里本该是一段文字</p>
                 <p>这里本该是一段文字</p>
             </div>
 
-            <div class="article-summary">
-                <h3><a href="docs/vn-16.html" id="article16">VN-16</a></h3>
+            <div class="article-summary" id="article10">
+                <h3><a href="docs/vn-10.html">VN-10</a></h3>
                 <p>这里本该是一段文字</p>
                 <p>这里本该是一段文字</p>
                 <p>这里本该是一段文字</p>
                 <p>这里本该是一段文字</p>
             </div>
 
-            <div class="article-summary">
-                <h3><a href="docs/vn-17.html" id="article17">VN-17</a></h3>
+            <div class="article-summary" id="article11">
+                <h3><a href="docs/vn-11.html">VN-11</a></h3>
+                <p>这里本该是一段文字</p>
+                <p>这里本该是一段文字</p>
+                <p>这里本该是一段文字</p>
+            </div>
+
+            <div class="article-summary" id="article12">
+                <h3><a href="docs/vn-12.html">VN-12</a></h3>
+                <p>这里本该是一段文字</p>
+                <p>这里本该是一段文字</p>
+                <p>这里本该是一段文字</p>
+                <p>这里本该是一段文字</p>
+            </div>
+
+            <div class="article-summary" id="article13">
+                <h3><a href="docs/vn-13.html">VN-13</a></h3>
+                <p>这里本该是一段文字</p>
+                <p>这里本该是一段文字</p>
+                <p>这里本该是一段文字</p>
+            </div>
+
+            <div class="article-summary" id="article14">
+                <h3><a href="docs/vn-14.html">VN-14</a></h3>
+                <p>这里本该是一段文字</p>
+                <p>这里本该是一段文字</p>
+                <p>这里本该是一段文字</p>
+                <p>这里本该是一段文字</p>
+            </div>
+
+            <div class="article-summary" id="article15">
+                <h3><a href="docs/vn-15.html">VN-15</a></h3>
+                <p>这里本该是一段文字</p>
+                <p>这里本该是一段文字</p>
+                <p>这里本该是一段文字</p>
+            </div>
+
+            <div class="article-summary" id="article16">
+                <h3><a href="docs/vn-16.html">VN-16</a></h3>
+                <p>这里本该是一段文字</p>
+                <p>这里本该是一段文字</p>
+                <p>这里本该是一段文字</p>
+                <p>这里本该是一段文字</p>
+            </div>
+
+            <div class="article-summary" id="article17">
+                <h3><a href="docs/vn-17.html">VN-17</a></h3>
                 <p>这里本该是一段文字</p>
                 <p>这里本该是一段文字</p>
                 <p>这里本该是一段文字</p>
