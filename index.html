@@ -113,10 +113,10 @@
             color: #ff8a00;
         }
 
-         /* 摘要网格布局 */
+        /* 摘要网格布局 */
         .article-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 20px;
             margin-top: 30px;
         }
@@ -129,6 +129,8 @@
             margin: 10px 0;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
 
         .article-summary:hover {
@@ -161,47 +163,55 @@
             color: #555;
         }
 
-        /* 瀑布流交错布局 */
-        .article-summary:nth-child(1) {
+        /* 瀑布流交错布局 - 奇数高度为偶数的1.5倍 */
+        .article-summary:nth-child(odd) {
             grid-row: span 1;
+            min-height: 150px; /* 基础高度 */
         }
 
-        .article-summary:nth-child(2) {
+        .article-summary:nth-child(even) {
             grid-row: span 2;
+            min-height: 225px; /* 1.5倍高度 */
         }
 
-        .article-summary:nth-child(3) {
-            grid-row: span 1;
+        /* 添加渐变和阴影美化 */
+        .article-summary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, #0066cc, #00ccff);
         }
 
-        .article-summary:nth-child(4) {
-            grid-row: span 2;
+        .article-summary {
+            background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.95), rgba(240, 248, 255, 0.95));
+            border-left: 4px solid #0066cc;
         }
 
-        .article-summary:nth-child(5) {
-            grid-row: span 1;
+        /* 响应式设计 - 电脑端4排，手机端2排 */
+        @media (max-width: 1024px) {
+            .article-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
         }
 
-        .article-summary:nth-child(6) {
-            grid-row: span 2;
-        }
-
-        .article-summary:nth-child(7) {
-            grid-row: span 1;
-        }
-
-        /* 响应式设计 */
         @media (max-width: 768px) {
             .article-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(2, 1fr);
             }
-
-            .article-summary {
-                grid-row: span 1;
-            }
-
+            
             h1 {
-                font-size: 2.5rem;
+                font-size: 2rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+            }
+            
+            .intro-box, .toc, .article-summary {
+                max-width: 95%;
             }
         }
 
@@ -210,10 +220,12 @@
                 grid-template-columns: 1fr;
             }
 
-            .article-summary {
+            .article-summary:nth-child(odd),
+            .article-summary:nth-child(even) {
                 grid-row: span 1;
+                min-height: 150px;
             }
-
+            
             h1 {
                 font-size: 2rem;
             }
@@ -231,25 +243,6 @@
             color: #666;
             font-style: italic;
         }
-
-        /* 响应式设计 */
-        @media (max-width: 768px) {
-            .article-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            h1 {
-                font-size: 2rem;
-            }
-            
-            .subtitle {
-                font-size: 1rem;
-            }
-            
-            .intro-box, .toc, .article-summary {
-                max-width: 95%;
-            }
-        }
     </style>
 </head>
 <body>
@@ -264,15 +257,16 @@
             <img src="images/nero-loading.gif" alt="V公合集插图" onerror="this.onerror=null; this.src='https://picsum.photos/seed/vcollec/800/400.jpg'">
         </div>
 
-         <footer>
-            <p>尼禄正在努力部署网页中</p>
-            <p>        。</p>
-            <p>        。</p>
-            <p>        。</p>
-            <p>        。</p>
-            <p>        。</p>
-            <p>        。</p>
-        </footer>
+        
+    <footer>
+        <p>尼禄正在努力部署网页中</p>
+        <p>        。</p>
+        <p>        。</p>
+        <p>        。</p>
+        <p>        。</p>
+        <p>        。</p>
+        <p>        。</p>
+    </footer>
 
         <!-- 简介边框 -->
         <div class="intro-box">
@@ -294,6 +288,16 @@
                     <li><a href="docs/vn-5.html">VN-5</a></li>
                     <li><a href="docs/vn-6.html">VN-6</a></li>
                     <li><a href="docs/vn-7.html">VN-7</a></li>
+                    <li><a href="docs/vn-8.html">VN-8</a></li>
+                    <li><a href="docs/vn-9.html">VN-9</a></li>
+                    <li><a href="docs/vn-10.html">VN-10</a></li>
+                    <li><a href="docs/vn-11.html">VN-11</a></li>
+                    <li><a href="docs/vn-12.html">VN-12</a></li>
+                    <li><a href="docs/vn-13.html">VN-13</a></li>
+                    <li><a href="docs/vn-14.html">VN-14</a></li>
+                    <li><a href="docs/vn-15.html">VN-15</a></li>
+                    <li><a href="docs/vn-16.html">VN-16</a></li>
+                    <li><a href="docs/vn-17.html">VN-17</a></li>
                 </ul>
             </div>
         </div>
@@ -302,9 +306,9 @@
         <div class="article-grid">
             <div class="article-summary">
                 <h3><a href="docs/vn-1.html" id="article1">VN-1</a></h3>
-                <p>这里本该是一段文字</p>
-                <p>这里本该是一段文字</p>
-                <p>这里本该是一段文字</p>
+                <p>清清可爱</p>
+                <p>稀饭可爱</p>
+                <p>刀师傅可爱</p>
             </div>
 
             <div class="article-summary">
@@ -351,8 +355,84 @@
                 <p>这里本该是一段文字</p>
                 <p>这里本该是一段文字</p>
             </div>
+
+            <div class="article-summary">
+                <h3><a href="docs/vn-8.html" id="article8">VN-8</a></h3>
+                <p>这里本该是一段文字</p>
+                <p>这里本该是一段文字</p>
+                <p>这里本该是一段文字</p>
+                <p>这里本该是一段文字</p>
+            </div>
+
+            <div class="article-summary">
+                <h3><a href="docs/vn-9.html" id="article9">VN-9</a></h3>
+                <p>这里本该是一段文字</p>
+                <p>这里本该是一段文字</p>
+                <p>这里本该是一段文字</p>
+            </div>
+
+            <div class="article-summary">
+                <h3><a href="docs/vn-10.html" id="article10">VN-10</a></h3>
+                <p>这里本该是一段文字</p>
+                <p>这里本该是一段文字</p>
+                <p>这里本该是一段文字</p>
+                <p>这里本该是一段文字</p>
+            </div>
+
+            <div class="article-summary">
+                <h3><a href="docs/vn-11.html" id="article11">VN-11</a></h3>
+                <p>这里本该是一段文字</p>
+                <p>这里本该是一段文字</p>
+                <p>这里本该是一段文字</p>
+            </div>
+
+            <div class="article-summary">
+                <h3><a href="docs/vn-12.html" id="article12">VN-12</a></h3>
+                <p>这里本该是一段文字</p>
+                <p>这里本该是一段文字</p>
+                <p>这里本该是一段文字</p>
+                <p>这里本该是一段文字</p>
+            </div>
+
+            <div class="article-summary">
+                <h3><a href="docs/vn-13.html" id="article13">VN-13</a></h3>
+                <p>这里本该是一段文字</p>
+                <p>这里本该是一段文字</p>
+                <p>这里本该是一段文字</p>
+            </div>
+
+            <div class="article-summary">
+                <h3><a href="docs/vn-14.html" id="article14">VN-14</a></h3>
+                <p>这里本该是一段文字</p>
+                <p>这里本该是一段文字</p>
+                <p>这里本该是一段文字</p>
+                <p>这里本该是一段文字</p>
+            </div>
+
+            <div class="article-summary">
+                <h3><a href="docs/vn-15.html" id="article15">VN-15</a></h3>
+                <p>这里本该是一段文字</p>
+                <p>这里本该是一段文字</p>
+                <p>这里本该是一段文字</p>
+            </div>
+
+            <div class="article-summary">
+                <h3><a href="docs/vn-16.html" id="article16">VN-16</a></h3>
+                <p>这里本该是一段文字</p>
+                <p>这里本该是一段文字</p>
+                <p>这里本该是一段文字</p>
+                <p>这里本该是一段文字</p>
+            </div>
+
+              <div class="article-summary">
+                <h3><a href="docs/vn-17.html" id="article16">VN-17</a></h3>
+                <p>这里本该是一段文字</p>
+                <p>这里本该是一段文字</p>
+                <p>这里本该是一段文字</p>
+                <p>这里本该是一段文字</p>
+            </div>
         </div>
-       
     </div>
+
 </body>
 </html>
